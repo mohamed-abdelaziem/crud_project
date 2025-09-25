@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud System</title>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+  </head>
+  <body>
+    <!-- container -->
+     <div class="d-flex justify-content-end align-items-center p-4  mb-0" style="height: 20px;">
+       <i id="toggler" class="fa-solid fa-gear mb-0 fs-5" style="cursor: pointer;"></i>
+     </div>
+
+    <div class="mx-auto container w-75 my-5">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="productName"
+          oninput="validateInputs(this)"
+          placeholder="name@example.com" />
+          <div class="alert alert-danger p-2 mt-2 d-none">
+            Name Should be first char is capital then at least 3 - 10 chars
+          </div>
+
+        
+          
+        <label for="productName">Product Name</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="productPrice"
+          oninput="validateInputs(this)"
+          placeholder="name@example.com" />
+           <div class="alert alert-danger p-2 mt-2 d-none">
+            Price Must be between 10 - 999999
+          </div>
+
+       
+        <label for="productPrice">Product Price</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="productCate"
+          placeholder="name@example.com"
+          oninput="validateInputs(this)"
+          list="list" />
+           <div class="alert alert-danger p-2 mt-2 d-none">
+            Category should be one of this values (tv , screens , tablets , mobile)
+          </div>
+
+          
+        <datalist id="list">
+          <option value="Tv"></option>
+          <option value="Screens"></option>
+          <option value="Mobile"></option>
+          <option value="Tablets"></option>
+        </datalist>
+        <label for="productCate">Product Category</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <textarea
+          type="text"
+          class="form-control"
+          id="productDesc"
+          oninput="validateInputs(this)"
+          placeholder="name@example.com"></textarea>
+           <div class="alert alert-danger p-2 mt-2 d-none">
+            Description should be at least 5 chars
+          </div>
+        <label for="productDesc">Product Desc</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="file"
+          class="form-control"
+          id="productImg"
+          oninput="validateInputs(this)"
+          placeholder="name@example.com" />
+        <label for="productImg">Product Image</label>
+      </div>
+
+      <button disabled id="addBtn" class="btn btn-primary my-4" onclick="addToCart()">
+        Add Product
+      </button>
+
+         <button onclick="updateProduct()" class="btn btn-warning d-none my-4" id="updateBtn">
+        Update Product
+      </button>
+
+      <div class="form-floating mb-3">
+        <input
+        oninput="search()"
+          type="search"
+          class="form-control"
+          id="productSearch"
+          placeholder="name@example.com" />
+        <label for="productSearch">Search</label>
+      </div>
+
+      <div class="row g-3">
+   
+      </div>
+      <button id="deleteAll" class="btn btn-outline-danger fs-4 mt-4 w-100">Delete All <i class="fa-solid fa-trash"></i></button>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
