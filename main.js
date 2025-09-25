@@ -16,7 +16,7 @@ if (localStorage.getItem("theme") == "dark") {
 } else {
 }
 
-if (JSON.parse(localStorage.getItem("productList")).length == 0) {
+if (JSON.parse(localStorage?.getItem("productList")).length == 0) {
   deleteAllBtn.classList.add("d-none");
 }
 
@@ -212,8 +212,7 @@ function validateInputs(element) {
     element.classList.add("is-invalid");
     element.classList.remove("is-valid");
     alertError.classList.replace("d-none", "d-block");
-    return false;
-  }
+    }
 
   if (
     productName.classList.contains("is-valid") &&
@@ -222,7 +221,7 @@ function validateInputs(element) {
     productPrice.classList.contains("is-valid")
   ) {
     console.log("success");
-    addBtn.removeAttribute("disabled");
+    // addBtn.removeAttribute("disabled");
   } else {
     addBtn.setAttribute("disabled", "disabled");
     console.log("error validate");
