@@ -11,7 +11,7 @@ var addBtn = document.getElementById("addBtn");
 var updateBtn = document.getElementById("updateBtn");
 var myIndex ;
 if (localStorage.getItem("theme") == "dark") {
-  document.body.classList.add("bg-darked");
+  document.body.classList.add("bg-dark");
   toggler.classList.add("text-white");
 } else {
 }
@@ -33,8 +33,8 @@ function deleteAllProduct() {
 
 // change background
 function changeBg() {
-  document.body.classList.toggle("bg-darked");
-  if (document.body.classList.contains("bg-darked")) {
+  document.body.classList.toggle("bg-dark");
+  if (document.body.classList.contains("bg-dark")) {
     localStorage.setItem("theme", "dark");
     toggler.classList.add("text-white");
   } else {
@@ -185,7 +185,7 @@ function search() {
   if (cartona === "") {
     document.querySelector(
       ".row"
-    ).innerHTML = `<h2 class="bg-dark text-white text-center rounded p-3">Not Found Data</h2>`;
+    ).innerHTML = `<h2 class="bg-black text-white text-center rounded p-3">Not Found Data</h2>`;
   } else {
     document.querySelector(".row").innerHTML = cartona;
   }
