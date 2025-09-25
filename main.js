@@ -16,9 +16,9 @@ if (localStorage.getItem("theme") == "dark") {
 } else {
 }
 
-if (JSON.parse(localStorage?.getItem("productList")).length == 0) {
-  deleteAllBtn.classList.add("d-none");
-}
+// if (productList.length == 0) {
+//   deleteAllBtn.classList.add("d-none");
+// }
 
 deleteAllBtn.addEventListener("click", function () {
   deleteAllProduct();
@@ -48,7 +48,7 @@ toggler.addEventListener("click", function () {
 });
 
 // array of product
-var productList = [];
+var productList;
 
 if (localStorage.getItem("productList")) {
   productList = JSON.parse(localStorage.getItem("productList"));
@@ -78,8 +78,8 @@ function addToCart() {
     displayProduct();
     deleteAllBtn.classList.remove("d-none");
     deleteAllBtn.classList.add("d-block");
-    console.log(addBtn.getAttribute("disabled"));
-    addBtn.removeAttribute("disabled");
+    // console.log(addBtn.getAttribute("disabled"));
+    // addBtn.removeAttribute("disabled");
     console.log(productList);
     clearInput();
   } else {
@@ -223,7 +223,7 @@ function validateInputs(element) {
     console.log("success");
     // addBtn.removeAttribute("disabled");
   } else {
-    addBtn.setAttribute("disabled", "disabled");
+    // addBtn.setAttribute("disabled", "disabled");
     console.log("error validate");
   }
 }
